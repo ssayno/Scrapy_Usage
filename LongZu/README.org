@@ -1,0 +1,17 @@
+* Guide
+这个是爬取龙族小说，这网站没有前传和5
+1. ~scrapy crawl dragon -s LOG_FILE=longzu.log~ 由于输出非常多，在我这里 78M，所以推荐直接设置到日志文件中
+   1. Except put the output to log file, you also can redefine the ~__str__~ function in the subclass of ~scrapy.Item~.
+      #+begin_src python
+import scrapy
+class LongzuItem(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    title = scrapy.Field()
+    content = scrapy.Field()
+
+    def __str__(self):
+        return ""
+      #+end_src
+2. ~cd Content && chmod +x change.sh && ./change.sh Dragon.tex~
+3. ~xelatex main.tex~(You should install texlive first.)
