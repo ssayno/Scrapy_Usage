@@ -20,7 +20,7 @@ class LPipeline:
         if not os.path.exists("./Content"):
             os.mkdir("./Content")
         with open("Content/" + f"{self.file_name}.tex", "w") as f:
-            f.write("\chapter{火之晨曦}")
+            f.write("\chapter{ 火之晨曦 }")
 
     def process_item(self, item, spider):
 
